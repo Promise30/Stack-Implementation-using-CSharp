@@ -12,14 +12,20 @@ namespace Stack_Implementation_using_CSharp
         {
             Stack stack= new Stack();
 
-            stack.Push(1);
-            stack.Push(2);
-            stack.Push(3);
+            Console.Write("Enter start value: ");
+            var _start = int.Parse(Console.ReadLine());
 
+            Console.Write("Enter end value: ");
+            var _stop = int.Parse(Console.ReadLine());
 
-            Console.WriteLine(stack.Pop());
-            Console.WriteLine(stack.Pop());
-            Console.WriteLine(stack.Pop());
+            for(var i =_start; i <= _stop; i++)
+            {
+                stack.Push(i);
+            }
+            for(var j = _start; j <= _stop; j++)
+            {
+                Console.WriteLine(stack.Pop());
+            }
 
             Console.ReadKey();
         }
