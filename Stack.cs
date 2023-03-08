@@ -8,7 +8,7 @@ namespace Stack_Implementation_using_CSharp
 {
     public class Stack
     {
-        List<object> list = new List<object>();
+        private readonly List<object> list = new List<object>();
         public void Push(object obj)
         {
             if(obj == null)
@@ -21,9 +21,12 @@ namespace Stack_Implementation_using_CSharp
         {
             if(list.Count == 0)
                 throw new InvalidOperationException("Cannot pop an element off an empty stack.");
-            
-            var item = list[list.Count - 1];
-            list.RemoveAt(list.Count - 1);
+
+            var index = list.Count - 1;
+
+            var item = list[index];
+
+            list.RemoveAt(index);
 
             return item;
         }
